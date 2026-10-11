@@ -1,0 +1,170 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>50+ 건강한 인생</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  /* 레이아웃: 상단 메뉴 → 이름과 소개문구가 있는 첫 화면 → 메뉴별 내용 → 하단 문구 */
+
+  /* ===== 색상·글꼴 설정 (여기 값만 바꾸면 사이트 전체 분위기가 바뀝니다) ===== */
+  :root {
+    --bg: #f4f7f3;          /* 바탕 */
+    --surface: #ffffff;     /* 카드 바탕 */
+    --fg: #1f2b26;          /* 본문 글자 */
+    --muted: #4d5f57;       /* 보조 글자 */
+    --pine: #2a5b4c;        /* 주 색상 (진한 초록) */
+    --pine-soft: #dfeae4;   /* 주 색상의 연한 톤 */
+    --rose: #a2455f;        /* 포인트 색상 */
+    --line: #cddad3;        /* 선 */
+    --on-pine: #ffffff;     /* 진한 초록 위의 글자 */
+
+    --font-display: "Gowun Batang", "Noto Serif KR", "Batang", serif;
+    --font-body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141c18; --surface: #1d2823; --fg: #eaf1ed; --muted: #b3c4bb;
+      --pine: #8fcfb6; --pine-soft: #24372f; --rose: #f0a3b8; --line: #34463e;
+      --on-pine: #10211a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141c18; --surface: #1d2823; --fg: #eaf1ed; --muted: #b3c4bb;
+    --pine: #8fcfb6; --pine-soft: #24372f; --rose: #f0a3b8; --line: #34463e;
+    --on-pine: #10211a; color-scheme: dark;
+  }
+
+  /* ===== 기본 ===== */
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: 19px;            /* 글씨를 크게: 기본 크기 */
+    line-height: 1.75;
+    padding-inline: clamp(20px, 5vw, 48px);
+    padding-block: 0 48px;
+    word-break: keep-all;       /* 한글 단어 단위로 줄바꿈 */
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 1040px; margin-inline: auto; }
+
+  /* ===== 상단 메뉴 ===== */
+  .top {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    margin-inline: calc(clamp(20px, 5vw, 48px) * -1);
+    padding-inline: clamp(20px, 5vw, 48px);
+  }
+  .top .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 24px; padding-block: 14px; }
+  .brand { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: var(--pine); text-decoration: none; }
+  .menu { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+  .menu a {
+    display: inline-block; padding: 8px 20px; border-radius: 999px;
+    background: var(--pine); color: var(--on-pine);
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+  }
+  .menu a:hover { background: var(--rose); color: #fff; }
+
+  /* ===== 첫 화면 ===== */
+  .hero { padding-block: clamp(40px, 8vw, 88px) clamp(36px, 6vw, 64px); display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 32px 56px; }
+  .eyebrow { margin: 0 0 14px; color: var(--rose); font-weight: 700; letter-spacing: .08em; font-size: .95rem; }
+  .hero h1 {
+    margin: 0; font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(2rem, 5.6vw, 3.6rem); line-height: 1.32; color: var(--pine);
+    text-wrap: balance;
+  }
+  .byline { margin: 28px 0 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; font-size: 1.15rem; }
+  .byline .role { color: var(--muted); }
+  .byline .name { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; }
+  .badge {
+    width: clamp(150px, 22vw, 230px); aspect-ratio: 1; border-radius: 50%;
+    background: var(--pine-soft); border: 2px solid var(--pine);
+    display: grid; place-items: center; text-align: center;
+    font-family: var(--font-display); color: var(--pine);
+  }
+  .badge b { display: block; font-size: clamp(3rem, 7vw, 4.8rem); line-height: 1; }
+  .badge span { display: block; margin-top: 6px; font-size: 1.05rem; font-weight: 700; }
+
+  /* ===== 메뉴별 내용 (건강관리) ===== */
+  .section { padding-block: clamp(36px, 6vw, 64px); border-top: 1px solid var(--line); scroll-margin-top: 72px; }
+  .section h2 { margin: 0 0 12px; font-family: var(--font-display); font-size: clamp(1.7rem, 4vw, 2.3rem); color: var(--pine); }
+  .section .lead { margin: 0 0 32px; max-width: 34em; color: var(--muted); font-size: 1.1rem; }
+  .topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 20px; list-style: none; margin: 0; padding: 0; }
+  .topic { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 26px 24px; min-width: 0; }
+  .topic .tag { color: var(--rose); font-weight: 700; font-size: .9rem; letter-spacing: .06em; }
+  .topic h3 { margin: 6px 0 10px; font-family: var(--font-display); font-size: 1.45rem; }
+  .topic p { margin: 0; color: var(--muted); font-size: 1.02rem; }
+
+  /* ===== 하단 ===== */
+  .foot { border-top: 1px solid var(--line); padding-block: 36px 8px; text-align: center; }
+  .foot .motto { margin: 0 0 8px; font-family: var(--font-display); font-weight: 700; font-size: clamp(1.15rem, 3.4vw, 1.5rem); color: var(--pine); }
+  .foot .copy { margin: 0; color: var(--muted); font-size: .95rem; }
+
+  @media (max-width: 640px) {
+    body { font-size: 18px; }
+    .hero { grid-template-columns: minmax(0, 1fr); }
+    .badge { width: 140px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<!-- ===== 상단 메뉴 =====
+     메뉴를 늘리려면 아래 <li> 한 줄을 복사해서 붙이고,
+     href="#health" 와 글자를 바꾼 뒤, 아래쪽에 같은 id를 가진 <section>을 추가하세요. -->
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">50+ 건강한 인생</a>
+    <nav aria-label="주요 메뉴">
+      <ul class="menu">
+        <li><a href="#health">건강관리</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ===== 첫 화면: 이름과 소개문구 ===== -->
+  <section class="hero wrap">
+    <div>
+      <p class="eyebrow">50+ 건강한 인생</p>
+      <h1>50대부터 시작하는 건강하고 든든한 인생</h1>
+      <p class="byline"><span class="role">건강관리사</span><span class="name">조영미</span></p>
+    </div>
+    <div class="badge" aria-hidden="true"><div><b>50+</b><span>건강한 인생</span></div></div>
+  </section>
+
+  <!-- ===== 메뉴 1. 건강관리 ===== -->
+  <section class="section wrap" id="health">
+    <h2>건강관리</h2>
+    <p class="lead">50대에 꼭 챙겨야 할 건강, 운동, 식습관을 건강관리사의 눈으로 쉽게 풀어 드립니다.</p>
+    <ul class="topics">
+      <li class="topic">
+        <span class="tag">건강</span>
+        <h3>내 몸 살피기</h3>
+        <p>달라지는 몸의 신호를 알아차리고, 오늘부터 바꿀 수 있는 생활 습관을 하나씩 알려드립니다.</p>
+      </li>
+      <li class="topic">
+        <span class="tag">운동</span>
+        <h3>무리 없는 운동</h3>
+        <p>부담 없이 오래 이어갈 수 있는 걷기와 가벼운 운동을 소개합니다.</p>
+      </li>
+      <li class="topic">
+        <span class="tag">식습관</span>
+        <h3>매일의 식사</h3>
+        <p>날마다 먹는 한 끼에서 시작하는 건강한 습관을 이야기합니다.</p>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<!-- ===== 하단 ===== -->
+<footer class="foot wrap">
+  <p class="motto">건강한 50대, 행복한 60대, 든든한 노후</p>
+  <p class="copy">건강관리사 조영미 · 50+ 건강한 인생</p>
+</footer>
+
+</body></html>
